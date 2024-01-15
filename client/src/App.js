@@ -1,4 +1,4 @@
-// 📁 ./client/src/App.js
+// 📁 client/src/App.js
 import logo from './logo.svg';
 import './App.css';
 import { useCallback, useContext, useEffect, useState } from 'react';
@@ -17,7 +17,7 @@ function App() {
     } catch (error) {
       console.error(error.message);
       alert("Error");
-      return;
+      setAppText("Failed to connect with server");
     }
   }, [requestURL]);
   useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <div>{appText.length > 0 ? appText : "Loading..."}</div>
+        <pre>{appText.length > 0 ? appText : "Loading..."}</pre>
       </header>
     </div>
   );
